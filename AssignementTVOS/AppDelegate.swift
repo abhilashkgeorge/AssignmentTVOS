@@ -11,9 +11,26 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        if let tabBarController = window?.rootViewController  as? UITabBarController {
+            
+            var viewController = [UIViewController]()
+            
+           
+            if let listController = tabBarController.storyboard?.instantiateViewController(withIdentifier: "list") as? MasterVC {
+                listController.title = "List"
+                viewController.append(listController)
+                    
+                
+            }
+
+            viewController.append(createSearch(storyboard: tabBarController.storyboard))
+            tabBarController.viewControllers = viewController
+        }
         // Override point for customization after application launch.
         return true
     }
@@ -33,6 +50,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    }
+    
+    func createSearch(storyboard: UIStoryboard?) -> UIViewController {
+        guard let listController = storyboard?.instantiateViewController(withIdentifier: "list") as? MasterVC else { fatalError("Instantiation Failed!!!!")}
+        
+        let searchController = UISearchController(searchResultsController: listController)
+        searchController.searchResultsUpdater = listController
+        
+        let searchContainer = UISearchContainerViewController(searchController: searchController)
+        searchContainer.title = "Search"
+        
+        return searchContainer
     }
 
 

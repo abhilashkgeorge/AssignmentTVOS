@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+
+struct University {
+    let name: String
+    let country: String
+}
+

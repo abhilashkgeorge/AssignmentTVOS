@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="13122.16" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="21507" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K3c-oU-IRx">
+    <device id="appleTV" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="list" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MasterVC" customModule="AssignementTVOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,12 +18,95 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="5NA-FG-g4E">
+                                <rect key="frame" x="491.5" y="60" width="937.5" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5NA-FG-g4E" secondAttribute="height" multiplier="15:8" id="Wou-gT-gVj"/>
+                                </constraints>
+                            </imageView>
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="Yq0-SZ-59b">
+                                <rect key="frame" x="360" y="460" width="1200" height="560"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1200" id="QoY-56-nEj"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="PoT-6i-ElX" customClass="CustomTableViewCell" customModule="AssignementTVOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="66" width="1200" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PoT-6i-ElX" id="fe5-Zu-5mI">
+                                            <rect key="frame" x="0.0" y="0.0" width="1200" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-tY-UaG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="1200" height="66"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07h-4u-05t" userLabel="university">
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pB9-wN-7Kv" userLabel="country">
+                                                            <rect key="frame" x="600" y="0.0" width="600" height="66"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="7iW-tY-UaG" secondAttribute="bottom" id="Fz4-6g-4FF"/>
+                                                <constraint firstItem="7iW-tY-UaG" firstAttribute="leading" secondItem="fe5-Zu-5mI" secondAttribute="leading" id="PXS-Xh-mND"/>
+                                                <constraint firstAttribute="trailing" secondItem="7iW-tY-UaG" secondAttribute="trailing" id="PqX-fs-6dT"/>
+                                                <constraint firstItem="7iW-tY-UaG" firstAttribute="top" secondItem="fe5-Zu-5mI" secondAttribute="top" id="sDb-an-SXh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="countryNameLbl" destination="pB9-wN-7Kv" id="TOw-0h-bp1"/>
+                                            <outlet property="universityNameLbl" destination="07h-4u-05t" id="DQD-Jy-R6O"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5NA-FG-g4E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A4c-1E-dyj"/>
+                            <constraint firstItem="Yq0-SZ-59b" firstAttribute="top" secondItem="5NA-FG-g4E" secondAttribute="bottom" constant="-100" id="VBX-aQ-xku"/>
+                            <constraint firstItem="5NA-FG-g4E" firstAttribute="top" secondItem="wu6-TO-1qx" secondAttribute="top" id="ZZQ-j3-rNO"/>
+                            <constraint firstItem="Yq0-SZ-59b" firstAttribute="centerX" secondItem="wu6-TO-1qx" secondAttribute="centerX" id="f5x-j7-B3J"/>
+                            <constraint firstItem="wu6-TO-1qx" firstAttribute="bottom" secondItem="Yq0-SZ-59b" secondAttribute="bottom" id="o1b-4T-lbV"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="t8L-h0-yHk"/>
+                    <connections>
+                        <outlet property="tableView" destination="Yq0-SZ-59b" id="6xP-9J-lyv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2082" y="-147"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Laq-N2-cfE">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="K3c-oU-IRx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" tag="1" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qok-IO-G6R">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IS5-K6-oTk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-50" y="-147"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="800" height="500"/>
+    </resources>
 </document>
